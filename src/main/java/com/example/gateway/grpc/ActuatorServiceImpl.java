@@ -1,5 +1,8 @@
 package com.example.gateway.grpc;
 
+import com.example.gateway.ActuatorRequest;
+import com.example.gateway.ActuatorResponse;
+import com.example.gateway.ActuatorServiceGrpc;
 import io.grpc.stub.StreamObserver;
 import net.devh.boot.grpc.server.service.GrpcService;
 

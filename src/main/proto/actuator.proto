@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 option java_multiple_files = true;
-option java_package = "com.example.gateway.grpc";
+option java_package = "com.example.gateway";
 
 service ActuatorService {
   rpc TurnOnDevice (ActuatorRequest) returns (ActuatorResponse);
@@ -17,4 +17,12 @@ message ActuatorRequest {
 
 message ActuatorResponse {
   bool success = 2;
+}
+
+message DeviceStatus {
+  string name = 1;
+  bool active = 2;
+  string status = 3;
+  float value = 4;
+  string unit = 5;
 }

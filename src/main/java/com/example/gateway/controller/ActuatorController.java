@@ -1,7 +1,7 @@
 package com.example.gateway.controller;
 
-import com.example.gateway.grpc.ActuatorRequest;
-import com.example.gateway.grpc.ActuatorServiceGrpc;
+import com.example.gateway.ActuatorRequest;
+import com.example.gateway.ActuatorServiceGrpc;
 import net.devh.boot.grpc.client.inject.GrpcClient;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,8 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/device")
-public class DeviceController {
+@RequestMapping("/api/actuator")
+public class ActuatorController {
+    //TODO USE H2
     @GrpcClient("actuatorServiceGrpc")
     private ActuatorServiceGrpc.ActuatorServiceBlockingStub actuatorStub;
 
