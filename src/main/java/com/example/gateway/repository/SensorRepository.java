@@ -15,6 +15,8 @@ public interface SensorRepository extends JpaRepository<Sensor, Long> {
 
     Optional<Sensor> findByName(String name);
 
-    @Query() //TODO QUERY
-    List<Sensor> findByNameWhenActiveIsTrueActiveIsTrue(String name);
+    @Query(value = "SELECT * FROM sensor s " +
+            "WHERE s.active = true", nativeQuery = true)
+    List<Sensor> findAllActiveSensors();
+
 }

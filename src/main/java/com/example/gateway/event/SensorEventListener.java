@@ -1,7 +1,7 @@
 package com.example.gateway.event;
 
 import com.example.gateway.DeviceStatus;
-import com.example.gateway.SensorService;
+import com.example.gateway.service.SensorService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;

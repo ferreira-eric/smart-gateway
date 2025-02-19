@@ -1,5 +1,7 @@
-package com.example.gateway;
+package com.example.gateway.service;
 
+import com.example.gateway.DeviceStatus;
+import com.example.gateway.dto.SensorDTO;
 import com.example.gateway.repository.SensorRepository;
 import com.example.gateway.repository.entity.Sensor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +11,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class SensorService {
@@ -50,7 +53,10 @@ public class SensorService {
         }
     }
 
-    public List<Sensor> getAllSensorsActive() {
-        return sensorRepository.findAll();
+    public List<SensorDTO> getAllSensorsActive() {
+        return sensorRepository.findAllActiveSensors()
+                .stream()
+                .map(SensorDTO::deserialize)
+                .collect(Collectors.toList());
     }
 }

@@ -1,19 +1,22 @@
 package com.example.gateway.controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.example.gateway.dto.SensorDTO;
+import com.example.gateway.service.SensorService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+import static org.springframework.http.ResponseEntity.ok;
 
 @RestController
-@RequestMapping("/api/device")
+@RequestMapping("/api/sensor")
 public class SensorController {
-    /* TODO
-    Listar dispositivos conectados.
-    Consultar estado de um dispositivo
-    Ligar/desligar um dispositivo.
-    Ajustar a configuração de um dispositivo (e.g., temperatura).
-    */
+    @Autowired
+    private SensorService sensorService;
 
-
-
-
+    @GetMapping()
+    public List<SensorDTO> getAllSensorActive() {
+        return ok(sensorService.getAllSensorsActive()).getBody();
+    }
 }
