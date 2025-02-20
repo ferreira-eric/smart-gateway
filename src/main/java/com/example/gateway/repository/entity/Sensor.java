@@ -23,7 +23,7 @@ public class Sensor implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
-    private Float value;
+    private Float valueField;
     private String unit;
     @Column(nullable = false)
     private Boolean active;

@@ -36,13 +36,13 @@ public class SensorService {
 
         if (sensor.isPresent()) {
             var sensorUpdate = sensor.get();
-            sensorUpdate.setValue(deviceStatus.getValue());
+            sensorUpdate.setValueField(deviceStatus.getValue());
             sensorUpdate.setActive(true);
             sensorUpdate.setUpdatedAt(LocalDateTime.now());
             sensorRepository.save(sensorUpdate);
         } else {
             var sensorSave = Sensor.builder()
-                    .value(deviceStatus.getValue())
+                    .valueField(deviceStatus.getValue())
                     .active(true)
                     .unit(deviceStatus.getUnit())
                     .name(deviceStatus.getName())

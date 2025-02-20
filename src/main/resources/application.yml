@@ -1,13 +1,14 @@
 spring:
   application:
     name: Smart-Gateway
+
   h2:
     console:
       enabled: true
+
   jpa:
-    properties:
-      hibernate:
-        globally_quoted_identifiers: true
+    hibernate:
+      ddl-auto: update  # Ou "create", "create-drop", "validate" dependendo do comportamento desejado
 
   datasource:
     url: jdbc:h2:mem:mydb
@@ -15,8 +16,6 @@ spring:
     username: sa
     password: password
     driverClassName: org.h2.Driver
-    jpa:
-      database-platform: org.hibernate.dialect.H2Dialect
 
   rabbitmq:
     host: localhost
@@ -25,5 +24,9 @@ spring:
     password: guest
 
     queue:
-      lamp:
-        name: ${LAMP_NAME:queue-sensor-lamp}
+      light:
+        name: ${LIGHT_NAME:queue_sensor_light}
+      humidity:
+        name: ${HUMIDITY_NAME:queue_sensor_humidity}
+      temperature:
+        name: ${TEMPERATURE_NAME:queue_sensor_temperature}

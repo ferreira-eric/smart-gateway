@@ -21,6 +21,6 @@ public class Actuator implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
-    private Float value;
+    private Float valueField;
     private Boolean active;
 }

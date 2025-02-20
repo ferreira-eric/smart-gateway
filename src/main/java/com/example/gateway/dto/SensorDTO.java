@@ -13,11 +13,11 @@ import java.time.LocalDateTime;
 @Setter
 public class SensorDTO implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 2698380273367623511L;
 
     private Long id;
     private String name;
-    private Float value;
+    private Float valueField;
     private String unit;
     private boolean active;
     private LocalDateTime updatedAt;

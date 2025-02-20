@@ -21,7 +21,7 @@ public class ActuatorService {
             var actuatorFinal = actuator.get();
             return ActuatorRequest.newBuilder()
                     .setDeviceId(actuatorFinal.getId())
-                    .setValue(actuatorFinal.getValue())
+                    .setValue(actuatorFinal.getValueField())
                     .setName(actuatorFinal.getName())
                     .setActive(actuatorFinal.getActive())
                     .build();
