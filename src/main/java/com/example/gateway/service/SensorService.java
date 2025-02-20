@@ -19,9 +19,9 @@ public class SensorService {
     @Autowired
     private SensorRepository sensorRepository;
 
-    @Scheduled(fixedRate = 60000) //60 s
+    @Scheduled(fixedRate = 5000) //5 s
     public void checkAndDeactivateInactiveSensors() {
-        LocalDateTime threshold = LocalDateTime.now().minusMinutes(1); // Define a limit time: 1 min
+        LocalDateTime threshold = LocalDateTime.now().withSecond(5); // Define a limit time
         List<Sensor> inactiveSensors = sensorRepository.findByActiveTrueAndUpdatedAtBefore(threshold);
 
         if (!inactiveSensors.isEmpty()) {
