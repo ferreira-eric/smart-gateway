@@ -3,9 +3,10 @@ syntax = "proto3";
 option java_multiple_files = true;
 option java_package = "com.example.gateway";
 
+package greenhouse;
+
 service ActuatorService {
-  rpc TurnOnDevice (ActuatorRequest) returns (ActuatorResponse);
-  rpc TurnOffDevice (ActuatorRequest) returns (ActuatorResponse);
+  rpc setValue (ActuatorRequest) returns (ActuatorResponse);
 }
 
 message ActuatorRequest {
@@ -16,13 +17,12 @@ message ActuatorRequest {
 }
 
 message ActuatorResponse {
-  bool success = 2;
+  string success = 2;
 }
 
 message DeviceStatus {
   int64 deviceId = 1;
   string name = 2;
-  bool active = 3;
-  float value = 4;
-  string unit = 5;
+  float value = 3;
+  string unit = 4;
 }

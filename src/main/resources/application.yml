@@ -8,11 +8,10 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: update  # Ou "create", "create-drop", "validate" dependendo do comportamento desejado
+      ddl-auto: update
 
   datasource:
     url: jdbc:h2:mem:mydb
-    #url: jdbc:h2:file:/data/demo #system file
     username: sa
     password: password
     driverClassName: org.h2.Driver
@@ -30,3 +29,18 @@ spring:
         name: ${HUMIDITY_NAME:queue_sensor_humidity}
       temperature:
         name: ${TEMPERATURE_NAME:queue_sensor_temperature}
+
+grpc:
+  devices:
+    actuator_temperature:
+      host: localhost
+      port: 50051
+    actuator_light:
+      host: localhost
+      port: 50052
+    actuator_humidity:
+      host: localhost
+      port: 50053
+
+
+

@@ -14,14 +14,14 @@ public class ActuatorService {
     @Autowired
     private ActuatorRepository actuatorRepository;
 
-    public ActuatorRequest getActuatorRequest(String name) {
+    public ActuatorRequest getActuatorRequest(String name, Float value) {
         Optional<Actuator> actuator = actuatorRepository.findByName(name);
 
         if (actuator.isPresent()) {
             var actuatorFinal = actuator.get();
             return ActuatorRequest.newBuilder()
                     .setDeviceId(actuatorFinal.getId())
-                    .setValue(actuatorFinal.getValueField())
+                    .setValue(value)
                     .setName(actuatorFinal.getName())
                     .setActive(actuatorFinal.getActive())
                     .build();

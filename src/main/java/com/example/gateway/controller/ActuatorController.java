@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import static org.springframework.http.ResponseEntity.ok;
 
 @RestController
-@RequestMapping("/api/actuator")
+@RequestMapping("/api/actuators")
 public class ActuatorController {
 
     @Autowired
@@ -21,13 +21,22 @@ public class ActuatorController {
     @Autowired
     private ActuatorService actuatorService;
 
-    @PostMapping("/{name}/on")
-    public ResponseEntity<?> turnOnDevice(@PathVariable String name) {
-        return ok(grpcService.turnOn(actuatorService.getActuatorRequest(name)));
+    @PostMapping("/actuator_temperature/{value}")
+    public ResponseEntity<?> setValueActuatorTemperature(@PathVariable Float value) {
+        String name = "actuator_temperature";
+        return ok(grpcService.setValueTemperatureActuator(actuatorService.getActuatorRequest(name, value)));
     }
 
-    @PostMapping("/{name}/off")
-    public ResponseEntity<?> turnOffDevice(@PathVariable String name) {
-        return ok(grpcService.turnOn(actuatorService.getActuatorRequest(name)));
+    @PostMapping("/actuator_light/{value}")
+    public ResponseEntity<?> setValueActuatorLight(@PathVariable Float value) {
+        String name = "actuator_light";
+        return ok(grpcService.setValueLightActuator(actuatorService.getActuatorRequest(name, value)));
     }
+
+    @PostMapping("/actuator_humidity/{value}")
+    public ResponseEntity<?> setValueActuatorHumidity(@PathVariable Float value) {
+        String name = "actuator_humidity";
+        return ok(grpcService.setValueHumidityActuator(actuatorService.getActuatorRequest(name, value)));
+    }
+
 }
