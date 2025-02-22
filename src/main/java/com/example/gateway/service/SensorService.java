@@ -19,7 +19,7 @@ public class SensorService {
     @Autowired
     private SensorRepository sensorRepository;
 
-    @Scheduled(fixedRate = 500) //5 s
+    @Scheduled(fixedRate = 1000)
     public void checkAndDeactivateInactiveSensors() {
         LocalDateTime threshold = LocalDateTime.now().withSecond(2); // Define a limit time
         List<Sensor> inactiveSensors = sensorRepository.findByActiveTrueAndUpdatedAtBefore(threshold);
@@ -53,8 +53,8 @@ public class SensorService {
         }
     }
 
-    public List<SensorDTO> getAllSensorsActive() {
-        return sensorRepository.findAllActiveSensors()
+    public List<SensorDTO> getAllSensors() {
+        return sensorRepository.findAll()
                 .stream()
                 .map(SensorDTO::deserialize)
                 .collect(Collectors.toList());

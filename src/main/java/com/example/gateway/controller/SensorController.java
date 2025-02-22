@@ -10,13 +10,13 @@ import java.util.List;
 import static org.springframework.http.ResponseEntity.ok;
 
 @RestController
-@RequestMapping("/api/sensor")
+@RequestMapping("/api/sensors")
 public class SensorController {
     @Autowired
     private SensorService sensorService;
 
     @GetMapping()
-    public List<SensorDTO> getAllSensorActive() {
-        return ok(sensorService.getAllSensorsActive()).getBody();
+    public List<SensorDTO> getAllSensor() {
+        return ok(sensorService.getAllSensors()).getBody();
     }
 }
