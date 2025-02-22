@@ -20,6 +20,7 @@ Este projeto utiliza diversas tecnologias modernas para garantir um funcionament
 - **💬 gRPC** 
 - **📩 RabbitMQ** 
 - **🛠️ Protobuf**
+- **💿 H2 Database**
 ---
 
 ## ⚙️ Configuração de Ambiente
@@ -29,7 +30,6 @@ Antes de rodar o projeto, certifique-se de ter instalado:
 
 - [JDK 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
 - [Maven 3.8+](https://maven.apache.org/)
-- [PostgreSQL 14+](https://www.postgresql.org/)
 - [Intellij IDEA](https://www.jetbrains.com/idea/) ou IDE de sua preferência
 - [RabbitMQ](https://www.rabbitmq.com/docs/download)
 - [Protobuf](https://protobuf.dev/downloads)
@@ -39,8 +39,8 @@ Antes de rodar o projeto, certifique-se de ter instalado:
 1. Clone o repositório:
 
 ```sh
-git clone https://github.com/ferreira-eric/
-cd subscription-spring-project
+git clone https://github.com/ferreira-eric/smart-gateway.git
+cd smart-gateway
 ```
 
 2. Instale as dependências e execute o projeto:
@@ -52,6 +52,16 @@ mvn spring-boot:run
 3. O servidor será iniciado em `http://localhost:8080`
 
 ---
+## 📐 Arquitetura do Projeto
+O **Smart Gateway** atua como um **intermediário** entre os **sensores** e **atuadores** e o cliente, como está descrito no diagrama abaixo:
+
+![Distribuidos arquitetura-C8 Architecture (3)](https://github.com/user-attachments/assets/37df8cfb-dbdb-4786-8a93-4cbf3fd4d0d9)
+
+---
+## 🧮 Cliente, Sensores e Atuadores
+Para poder acessar todas as funcionalidades do projeto, simulando os demais componentes deve-ser seguir os passos descrito em:
+
+https://github.com/pauloricms12/smart_greenhouse_2
 
 ## 📜 Licença
 
