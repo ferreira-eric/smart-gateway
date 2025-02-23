@@ -55,12 +55,14 @@ mvn spring-boot:run
 ## 📐 Arquitetura do Projeto
 O **Smart Gateway** atua como um **intermediário** entre os **sensores** e **atuadores** e o cliente, como está descrito no diagrama abaixo:
 
-![Distribuidos arquitetura-C8 Architecture (3)](https://github.com/user-attachments/assets/37df8cfb-dbdb-4786-8a93-4cbf3fd4d0d9)
+![Distribuidos arquitetura-C8 Architecture (5)](https://github.com/user-attachments/assets/cfc7d9e6-c196-4227-b3b6-ec59186f33d3)
 
 ---
+
 ## 🧮 Cliente, Sensores e Atuadores
 > **Importante:** As funcionalidades do Cliente, Sensores e Atuadores estão disponiveis em: [Smart Greenhouse](https://github.com/ferreira-eric/smart_greenhouse). Siga as instruções no descritas no projeto. ⚠️
-
+> 
+---
 ## 📜 Licença
 
 MIT, Apache 2.0
