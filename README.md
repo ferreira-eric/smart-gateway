@@ -59,9 +59,7 @@ O **Smart Gateway** atua como um **intermediário** entre os **sensores** e **at
 
 ---
 ## 🧮 Cliente, Sensores e Atuadores
-Para poder acessar todas as funcionalidades do projeto, simulando os demais componentes deve-ser seguir os passos descrito em:
-
-https://github.com/pauloricms12/smart_greenhouse_2
+> **Importante:** As funcionalidades do Cliente, Sensores e Atuadores estão disponiveis em: [Smart Greenhouse](https://github.com/ferreira-eric/smart_greenhouse). Siga as instruções no descritas no projeto. ⚠️
 
 ## 📜 Licença
 
